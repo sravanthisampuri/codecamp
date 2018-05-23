@@ -1,0 +1,115 @@
+<!-- <div class="panel panel-default" *ngIf="show" [hidden] = "hidden"
+[style.visibility] = 'visibility'>
+  <div class="panel-body">A Basic Panel</div>
+</div>
+<button class="btn btn-primary" (click)="toggleshow()">show</button>
+<button class="btn btn-default" (click)="togglehide()">hide</button>
+<button class="btn btn-danger" (click)="togglevisible()">visibility</button> -->
+
+
+
+<!-- <input type="text" [(ngModel)]="details.name" /> 
+<input type="text" [(ngModel)]="details.rollnum" />  
+<button class="btn btn-danger" (click)="addDetails()">ADD</button>
+<br>
+<br>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of fieldArray" >
+            <td>{{field.name}}</td> 
+            <td>{{field.rollnum}}</td>
+            <button (click)="fieldArray.splice(i,1)">X</button>
+           
+        </tr>
+      
+    </tbody>
+</table> -->
+<!-- <app-navbar></app-navbar>
+<router-outlet>In Default page</router-outlet>
+<app-contact-form></app-contact-form> -->
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">only show odd numbers</button>
+            <br><br>
+            <div class="list-group">
+                    <ul>
+                <div *ngIf = "onlyOdd">
+                        <li class="list-group-item"
+                        [ngClass]="{odd:odd}"
+                        [ngStyle]="{backgroundColor:odd % 2 !== 0 ? 'yellow':'lightblue'}"
+                        *ngFor="let odd of oddnum">
+                    {{ odd }}
+                        </li>
+                </div>
+               <div *ngIf = "!onlyOdd">
+                    <li class="list-group-item"
+                    [ngClass]="{even:even}"
+                    [ngStyle]="{backgroundColor:even % 2  !== 0 ? 'yellow':'lightblue'}"
+                    *ngFor="let even of evennum">
+                {{ even }}
+               </div>
+               </ul>
+               <p appBasicHighlight>style me with basic directive</p> 
+            </div>
+        </div>
+        
+    </div>
+</div> -->
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Batters</th>
+            <th>Toppings</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tables of tablesArray">
+            <td>
+
+                {{tables.type}}
+            </td>
+            <td>{{tables.name}}</td>
+
+            <td>
+                <ul>
+                     <!-- <li *ngFor=" let x of tables.batters.batter"  [ngClass]="{'Regular':x.type === 'Regular', 'Chocolate':x.type === 'Chocolate','Blueberry':x.type === 'Blueberry', 'changeColor-red':x.type === 'Devil\'s Food'}">  -->
+                <li *ngFor=" let x of tables.batters.batter" [ngClass]="applyColor(x.type)" >
+                       
+                        {{ x.type }}  
+                              
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li *ngFor ="let x of tables.topping">
+                        {{ x.type}}
+
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+    </tbody>
+</table>  <!-- *ngIf ="x.type ==='Regular'"
+    [ngStyle]="{'color':'red'}" -->
+
+
+  <!-- *ngIf ="x.type ==='Regular'"
+                        [ngStyle]="{'color':'red'}" -->
+                        <!-- [ngClass]="[{'Regular':x.type =='Regular'},{'Chocolate':x.type =='Chocolate'}]"
+[ngClass]="{'changeColor-grey':list.appStatus === 'Pending', 'changeColor-red':list.appStatus === 'Rejected','changeColor-orange':list.appStatus === 'Rescheduled', 'changeColor-green':list.appStatus == 'Accepted'}" -->
