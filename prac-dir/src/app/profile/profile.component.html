@@ -1,0 +1,73 @@
+
+<div *ngIf="!showForm">
+<form [formGroup] = "profilePage">
+  <div class="form-group">
+    <label for="full name">Full Name:</label>
+    <input class="form-control"  formControlName="fullname" placeholder="Full Name" type="name">
+    <span *ngIf="!profilePage.get('fullname').valid && profilePage.get('fullname').touched"  class="error-msg">
+    Please enter fullname  
+  </span>
+  </div>
+  <div class="form-group">
+    <label for="dob">Date of birthshowForm:</label>
+    <input class="form-control" type="Date" formControlName="dob" placeholder="DOB">
+    <span *ngIf="!profilePage.get('dob').valid && profilePage.get('dob').touched"  class="error-msg">
+      Please enter DOB  
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input class="form-control" type="number" formControlName="age" placeholder="text">
+    <span *ngIf="!profilePage.get('age').valid && profilePage.get('age').touched"  class="error-msg">
+      Please enter Age  
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="qualification">Qualification:</label>
+    <input class="form-control" type="text" formControlName="qualification" placeholder="Qualification">
+    <span *ngIf="!profilePage.get('qualification').valid && profilePage.get('qualification').touched"  class="error-msg">
+      Please enter qualification  
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="highest-degree">Highest Degree:</label>
+    <input class="form-control" type="text" formControlName="highestdegree" placeholder="Highest Degree">
+    <span *ngIf="!profilePage.get('highestdegree').valid && profilePage.get('highestdegree').touched"  class="error-msg">
+      Please enter highestdegree  
+    </span>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="button" [disabled]="profilePage.invalid" (click)="editDetails()">
+  Edit
+    </button>
+  </div>
+ 
+  
+</form>
+</div>
+
+<div *ngIf="showForm">
+    <h2 class="profile-col">My Profile</h2>
+    <div class="row">
+      <div class="col-xs-2"><b>Full Name:</b></div>
+      <div class="col-xs-9 ">{{ userDetails.fullname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2"><b>Date of birth:</b></div>
+      <div class="col-xs-9 ">{{ userDetails.dob }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2"><b>Age:</b></div>
+        <div class="col-xs-9 ">{{ userDetails.age }}</div>
+      </div>
+      <div class="row">
+          <div class="col-xs-2"><b>Qualification:</b></div>
+          <div class="col-xs-9">{{ userDetails.qualification }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2"><b>Highest Degree:</b></div>
+            <div class="col-xs-9 ">{{ userDetails.highestdegree }}</div>
+          </div>
+    
+    </div> 
+
